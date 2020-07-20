@@ -1,0 +1,259 @@
+.container{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+span{
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    border-radius: 100px;
+    animation: move 2s linear infinite;
+}
+
+span:nth-child(1){
+    left:10%;
+    bottom:11%;
+
+}
+
+span:nth-child(2){
+    left:14%;
+    bottom: 11%;
+}
+
+span:nth-child(3){
+    left:85%;
+    bottom: 37%;
+}
+
+span:nth-child(4){
+    left:87%;
+    bottom: 37%;
+}
+
+@keyframes moves{
+    150%{
+        transform: translateX(10px);
+    }
+}
+
+.bird{
+    position: absolute;
+    width: 95px;
+    top: 200px;
+    height: 85px;
+    z-index: 1;
+    background: #fff;
+    border-radius: 76% 24% 100% 0% / 100% 41% 59% 0%;
+    animation: fly 10s forwards;
+    z-index: 5;
+    background: pink;
+}
+
+@keyframes fly{
+    100%{
+        top:180px;
+    }
+    10%{
+        transform: translateY(-300px);
+        transform: translateX(300px);
+        top: 197px;
+    }
+}
+
+.bird::before{
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    left: -10px;
+    background: cyan;
+    border-radius: 15% 85% 0% 100% / 0% 30% 70% 100%;
+    animation: wings 1s infinite;
+}
+
+@keyframes wings {
+    100%{
+        transform: rotate(60deg);
+    }
+}
+.bird:after{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 95px;
+    top:15%;
+    border-right: 10px solid salmon;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: rotate(50deg);
+}
+
+.eye{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    left: 70%;
+    top: 10%;
+    border-radius: 50%;
+}
+
+body{
+    background: black;
+}
+
+.city{
+    height: 100vh;
+    width: 100%;
+    border: 1px solid black;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.rain{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(5, 15, 15);
+    position: absolute;
+    animation: rain .1s linear infinite;
+}
+
+@keyframes rain {          
+        0%{
+            background-position: 0% 0%;
+        }
+        100%{
+            background-position:20% 100%;
+        }
+    }
+
+.dom{
+    width:100%;
+    height:100%;
+    position:absolute;            
+    opacity: 0;
+    animation: dom .5s linear infinite;
+}
+
+@keyframes dom {
+    0%{
+        opacity:0;
+    }
+    10%{
+        opacity: .0;
+    }
+    18%{
+        opacity: 0.4;
+    }
+
+    20%{
+        opacity: .7;
+    }
+
+    21%{
+        opacity: 0;
+    }
+    
+    1000%{
+        opacity: 0;
+    }
+}   
+
+#back{
+    margin:0px;
+    position: fixed;
+    padding:0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.star{
+    height: 0;
+    width: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid gold;
+    position:relative;
+    animation-iteration-count: infinite;
+}
+
+.star:after{
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid gold;
+    position: absolute;
+    content: "";
+    top:15px;
+    left: -25px;
+}
+
+.moon{
+    position:relative;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0 0 gold;
+    margin-top:10%;
+    margin-left:10%;
+    animation-name: moonride;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.one{
+    margin-top:20%;
+    margin-left:60%;
+    animation-name: twinkle-1;
+    animation-duration: 1s;
+}
+
+.two{
+    margin-top:20%;
+    margin-left:20%;
+    animation-name: twinkle-2;
+    animation-duration: 1s;
+}
+
+@keyframes twinkle-1 {
+    20%{
+        transform:scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+@keyframes twinkle-2 {
+    60%{
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+@keyframes moonride {
+    0%{
+        left: 10%;
+    }
+    50%{
+        left: 45%;
+        opacity: 0.5;
+    }
+    100%{
+        left: 10%;
+    }
+}
